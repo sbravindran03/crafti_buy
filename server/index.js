@@ -10,12 +10,28 @@ const PORT =3000;
 // promises are basically like futures in data, 
 const app =express();
 // CREATING AN API
+// http://<youripaddresss>/hello-world
+app.get("/hello-world",(req,res)=>{
+    res.json({hi:"hello world"});
 
-app.listen(PORT,"0.0.0.0",()=>{
-    console.log(`connected at port ${PORT}`);
+});
+// create a get request giving a json response with of name
+// and value of YOUR NAME 
+app.get("/RAVI-SB",(req,res)=>{
+    res.json({name:"ravi"});
+
+});
+
+// GET, PUT, POST,DELETE, UPDATE, -->CRUD
+
+
+app.listen(PORT,()=>{
+    console.log(`connected at port ${PORT} hello`);
     
 });
 //local host
 //192.11
 
 
+
+// 1:09:32
