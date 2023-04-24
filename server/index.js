@@ -1,26 +1,30 @@
     // 46:51
 // express is just a prebuilt , just framework that will help us in creating server side
 // webapplications 
-console.log("hello");
+
 // mongo supports both promises and callbacks
-const express =require('express');
+// IMPORTS FROM PACKAGES
+const express =require("express");
+// IMPORTS FROM OTHER FILES
+const authRouter =require("./routes/auth");
+// import 'package;flutter/screens/auth.dart'
+
+// INIT
+const app =express();
 const PORT =3000;
+// middleware
+app.use(authRouter);
+// client->MIDDLEWARE ->SERVER -> CLIENT 
 
 //import 'package:express/express.dart';
 // promises are basically like futures in data, 
-const app =express();
+
 // CREATING AN API
 // http://<youripaddresss>/hello-world
-app.get("/hello-world",(req,res)=>{
-    res.json({hi:"hello world"});
 
-});
 // create a get request giving a json response with of name
 // and value of YOUR NAME 
-app.get("/RAVI-SB",(req,res)=>{
-    res.json({name:"ravi"});
 
-});
 
 // GET, PUT, POST,DELETE, UPDATE, -->CRUD
 
