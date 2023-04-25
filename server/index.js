@@ -5,6 +5,7 @@
 // mongo supports both promises and callbacks
 // IMPORTS FROM PACKAGES
 const express =require("express");
+const mongoose =require('mongoose');
 // IMPORTS FROM OTHER FILES
 const authRouter =require("./routes/auth");
 // import 'package;flutter/screens/auth.dart'
@@ -12,10 +13,20 @@ const authRouter =require("./routes/auth");
 // INIT
 const app =express();
 const PORT =3000;
+const DB ='mongodb+srv://ravindran5211:LATHA.B@rak12.eyxde7v.mongodb.net/?retryWrites=true&w=majority'
 // middleware
 app.use(authRouter);
 // client->MIDDLEWARE ->SERVER -> CLIENT 
+// connections 
+mongoose
+        .connect(DB)
+        .then(()=>{
+            console.log('Connection Successful ')
+})
+    .catch(e=>{
+      console.log(e); 
 
+})
 //import 'package:express/express.dart';
 // promises are basically like futures in data, 
 
