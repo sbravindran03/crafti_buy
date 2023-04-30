@@ -1,11 +1,11 @@
 const express =require("express");
 const authRouter =require("../models/user");
-const authRouter =require("../models/seller");
+
 const authRouter =express.Router();
 authRouter.post('/api/signup',async (req,res)=>{
     const{name,email,password}= req.body;
     const existingUser =await User.findone({email});
-    const existingSeller = await seller.findone({email});
+   
  
     if(existingUser){
         return res.status(400).json({msg:"User with same email already exist"});
