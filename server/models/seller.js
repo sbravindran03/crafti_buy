@@ -37,5 +37,5 @@ const sellerSchema =mongoose.Schema({
     // cart
 
 });
-const  seller =moongoose.model('U',sellerSchema);
+const  seller =moongoose.model('Seller',sellerSchema);
 module.exports =seller;

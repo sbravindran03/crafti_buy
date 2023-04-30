@@ -1,7 +1,11 @@
 const express =require("express");
+const authRouter =require("../models/user");
+const authRouter =require("../models/seller");
 const authRouter =express.Router();
 authRouter.post('/api/signup',(req,res)=>{
     const{name,email,password}= req.body;
+    const existingUser =User.findone({email});
+    const existingSeller = seller.findone({email});
 
     // {
         // 'name:name,'email':email, 'password':password
