@@ -15,6 +15,7 @@ const app =express();
 const PORT =3000;
 const DB ='mongodb+srv://ravindran5211:LATHA.B@rak12.eyxde7v.mongodb.net/?retryWrites=true&w=majority'
 // middleware
+app.use(express.json());
 app.use(authRouter);
 // client->MIDDLEWARE ->SERVER -> CLIENT 
 // connections 
