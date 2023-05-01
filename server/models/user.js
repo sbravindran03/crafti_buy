@@ -23,17 +23,21 @@ const userSchema =mongoose.Schema({
     
     },
     password:{
-        required: true,
+        required:true,
         type:String,
+       
+    
+        
     },
     address:{
         type:String,
-        default:'',
+        default:"",
     },
     type:{
         type:String, 
         default:'user,'
     }
 });
-const  User =moongoose.model('User',userSchema);
+const  User =mongoose.model('User',userSchema);
 module.exports =User;
+// 1:54:22

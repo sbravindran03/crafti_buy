@@ -1,25 +1,25 @@
-const express =require("express");
-const authRouter =require("../models/user");
+const express = require("express");
+const User = require("../models/user");
 
-const authRouter =express.Router();
-authRouter.post('/api/signup',async (req,res)=>{
-    const{name,email,password}= req.body;
-    const existingUser =await User.findone({email});
-   
- 
-    if(existingUser){
-        return res.status(400).json({msg:"User with same email already exist"});
-        
-    }
-    // 200
-    // {
-        // 'name:name,'email':email, 'password':password
-    // } 1:26
-    //  weak-password -6 charcters ,same -account -with  email
+const authRouter = express.Router();
 
-    // get the data from the client 
-    // post that data in dat abase to the user
+authRouter.post("/api/signup", async (req, res) => {
+  const { name, email, password } = req.body;
 
+  const existingUser = await User.findOne({ email });
+
+  if (existingUser) {
+    return res.status(400).json({ msg: "User with same email already exists" });
+  }
+
+  let user = new User({
+    email,
+    password,
+    name,
+  });
+
+  user = await user.save();
+  res.json(user);
 });
-module.exports=authRouter;
-// 1:42:39
+
+module.exports = authRouter;
