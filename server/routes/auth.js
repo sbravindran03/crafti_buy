@@ -12,13 +12,14 @@ authRouter.post("/api/signup", async (req, res) => {
       
         if (existingUser) {
           return res
-          .status(400)
+          .status(400)s
           .json({ msg: "User with same email already exists" });
         }
+        const hashedPassword =await bcryptjs.hash(password,8);
       
         let user = new User({
           email,
-          password,
+          password:hashedPassword,
           name,
         });
       
@@ -29,7 +30,7 @@ authRouter.post("/api/signup", async (req, res) => {
        }
     } );
     //  2:01
-    
+    // 2:05
  
 
 module.exports = authRouter;
