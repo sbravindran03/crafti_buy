@@ -42,7 +42,7 @@ mongoose
 // GET, PUT, POST,DELETE, UPDATE, -->CRUD
 
 
-app.listen(PORT,()=>{
+app.listen(PORT,"0.0.0.0",()=>{
     console.log(`connected at port ${PORT} hello`);
     
 });
